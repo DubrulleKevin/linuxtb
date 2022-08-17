@@ -1,0 +1,11 @@
+cp -v /boot/config-$(uname -r) .config
+Enlever du .config les références aux clés SSL canonical
+make oldconfig
+make -j2
+sudo make INSTALL_MOD_STRIP=1 modules_install
+sudo make install 
+
+The Linux kernel uses Sphinx to generate pretty documentation from reStructuredText files under Documentation. To build the documentation in HTML or PDF formats, use make htmldocs or make pdfdocs. The generated documentation is placed in Documentation/output.
+
+$ make LSMOD="lsmod.txt" localmodconfig
+
